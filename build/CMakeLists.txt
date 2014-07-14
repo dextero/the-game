@@ -11,14 +11,11 @@ add_definitions(-DGLM_FORCE_RADIANS)
 # platform-specific
 if(WIN32)
     add_definitions(-DPLATFORM_WIN32)
-    set(GIT_COMMAND "%PROGRAMFILES%/Git/bin/git.exe")
 elseif(UNIX)
     add_definitions(-DPLATFORM_LINUX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-    set(GIT_COMMAND "git")
+    execute_process(COMMAND git submodule update --init)
 endif()
-
-execute_process(COMMAND ${GIT_COMMAND} submodule update --init)
 
 # libraires
 find_package(OpenGL REQUIRED)
