@@ -1,3 +1,4 @@
+#include "rendering/color.h"
 #include "window/window.h"
 
 int main(int argc, char** argv)
@@ -19,6 +20,9 @@ int main(int argc, char** argv)
                 break;
             }
         }
+
+        window.clear(sb::Color::Black);
+        window.display();
     }
 
     return 0;
