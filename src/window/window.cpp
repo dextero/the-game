@@ -84,6 +84,10 @@ const Vec2i Window::getSize()
 
 bool Window::getEvent(Event& e)
 {
+    if (!mHandle) {
+        return false;
+    }
+
     while (XPending(mHandle->display)) {
         XEvent event;
         XNextEvent(mHandle->display, &event);
