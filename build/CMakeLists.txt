@@ -4,6 +4,8 @@ project(TheGame)
 set(ROOT_DIR ${PROJECT_SOURCE_DIR}/..)
 set(EXECUTABLE_OUTPUT_PATH ${ROOT_DIR}/bin)
 
+set(CMAKE_BUILD_TYPE Debug)
+
 add_definitions(-DGLM_FORCE_RADIANS)
 
 # libraires
